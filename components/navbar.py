@@ -1,19 +1,34 @@
 from dash import html
 
+
 def create_navbar():
+    navbar_style = {
+        'list-style-type': 'none',
+        'margin': 0,
+        'padding': 0,
+        'height': '100vh',
+        'width': '200px',
+        'background-color': '#f0f0f0',
+        'position': 'fixed',
+    }
+
+    link_style = {
+        'display': 'block',
+        'color': '#000',
+        'padding': '8px',
+        'text-decoration': 'none',
+    }
+
+    hover_style = {
+        'background-color': '#ddd',
+    }
+
     navbar = html.Div([
         html.Ul([
-            html.Li(html.A('О проекте', href='/')),
-            html.Li(html.A('Аналитика', href='/currency-analysis')),
-            html.Li(html.A('Контакты', href='/contact')),
-        ], style={
-            'list-style-type': 'none',
-            'padding': 0,
-            'height': '100vh',  # Высота на всю высоту окна просмотра
-            'width': '200px',  # Ширина блока навигации
-            'background-color': '#f0f0f0',  # Цвет фона
-            'position': 'fixed',  # Фиксированное положение
-        })
-    ], style={'flex': '0 0 200px'})  # Задаем фиксированную ширину для блока навигации
-    return navbar
+            html.Li(html.A('О проекте', href='/', style=link_style), style=hover_style),
+            html.Li(html.A('Аналитика', href='/currency-analysis', style=link_style), style=hover_style),
+            html.Li(html.A('Контакты', href='/contact', style=link_style), style=hover_style),
+        ], style=navbar_style)
+    ], style={'flex': '0 0 200px'})
 
+    return navbar
