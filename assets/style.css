@@ -39,7 +39,9 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 24.2px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -54,7 +56,10 @@
     font-weight: 800;
     line-height: 24.2px;
     text-align: left;
-
+    height: 75px;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative
 }
 
 .block-text {
