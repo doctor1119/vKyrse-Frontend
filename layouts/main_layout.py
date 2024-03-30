@@ -1,12 +1,49 @@
 from dash import html
+import dash_bootstrap_components as dbc
 
 
 def create_main_layout():
     layout = html.Div([
-        html.Div(id='page-content', children=[
-            html.H1("О нашем проекте", className="text-center mt-5"),
-            html.P("Этот проект создан для демонстрации того, как легко можно добавить текст на страницу с помощью "
-                   "Dash.", style={'fontSize': '18px', 'color': 'green'})
-        ]),
+        html.Div(children=[
+            html.H1("Кто мы?", className="header-text"),
+            html.P("Мы команда инициативных студентов, создавших для вас продукт, который позволит делать прогнозы  и "
+                   "анализировать курса рубля", className="text")
+        ], className="block-html"),
+        html.Div(children=[
+            html.H1("О чем?", className="header-text"),
+            html.P("Мы тщательно подобрали для вас самые разнообразные и последние новости, которые больше всего "
+                   "могут влиять на курс рубля.", className="text")
+        ], className="block-html"),
+        html.Div(
+            children=[
+                html.Div("НА НАШЕЙ ПЛАТФОРМЕ ВЫ СМОЖЕТЕ", className='gradient-bar')
+            ], className="block-html"
+        ),
+        dbc.Row([
+            dbc.Col(dbc.Card([
+                dbc.CardBody([
+                    html.P("Быть в курсе всех актуальных событий и новостей", className="block-text"),
+                ])
+            ]),
+            ),
+            dbc.Col(dbc.Card([
+                dbc.CardBody([
+                    html.P("Прогнозировать изменения курса рубля", className="block-text"),
+                ])
+            ])),
+        ], className='mb-4'),
+        dbc.Row([
+            dbc.Col(dbc.Card([
+                dbc.CardBody([
+                    html.P("Анализировать текущую обстановку на рынке", className="block-text"),
+                ])
+            ]),
+            ),
+            dbc.Col(dbc.Card([
+                dbc.CardBody([
+                    html.P("Создавать свою стратегию инвестирования", className="block-text"),
+                ])
+            ])),
+        ], className='mb-4'),
     ])
     return layout

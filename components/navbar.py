@@ -12,41 +12,6 @@ def create_navbar():
         'position': 'fixed',
     }
 
-    logo_style = {
-        'height': '50px',
-        'margin-bottom': '16px',
-    }
-
-    title_style = {
-        'color': '#000',  # Цвет текста названия приложения
-        'margin-bottom': '16px',  # Отступ снизу названия приложения
-        'font-size': '20px',  # Размер шрифта названия приложения
-    }
-
-    # link_style = {
-    #     'display': 'block',
-    #     'color': '#000',
-    #     'padding': '16px',
-    #     'text-decoration': 'none',
-    #     'font-family': 'Inter',
-    #     'font-size': '26px',
-    #     # 'font-weight': '500',
-    #     # 'line-height': '31.47px',
-    #     'text-align': 'center',
-    # }
-
-    # hover_style = {
-    #     'background-color': '#F9F9FC',
-    #     'border-radius': '20px',
-    #     'margin': '16px 0',
-    #     'display': 'flex',
-    #     'align-items': 'center',
-    #     'justify-content': 'center',
-    #     'height': '40px',
-    #     'width': '100%',
-    #     'padding': '0 16px',
-    # }
-
     navbar = html.Div([
         html.Ul([
             # html.Img(src='/assets/logo_svg.svg', className='logo'),
