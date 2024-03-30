@@ -4,6 +4,7 @@ from dash.dependencies import Input, Output
 from app import app
 from layouts.main_layout import create_main_layout
 from layouts.analytics_layout import create_analytics_layout
+from layouts.contacts_layout import create_contacts_layout
 from components.navbar import create_navbar
 
 
@@ -20,6 +21,8 @@ def serve_layout():
 def display_page(pathname):
     if pathname == '/currency-analysis':
         return create_analytics_layout()
+    if pathname == '/contact':
+        return create_contacts_layout()
 
     elif pathname == '/':
         return create_main_layout()
