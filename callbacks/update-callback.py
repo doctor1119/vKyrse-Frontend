@@ -3,6 +3,7 @@ import dash_ag_grid as dag
 import plotly.graph_objs as go
 import pandas as pd
 from app import app
+from services.send_requests import send_requests
 
 
 @app.callback(
