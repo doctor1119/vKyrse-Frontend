@@ -5,29 +5,54 @@ def create_navbar():
     navbar_style = {
         'list-style-type': 'none',
         'margin': 0,
-        'padding': 0,
+        'padding': '40px 16px 0 16px',
         'height': '100vh',
-        'width': '200px',
-        'background-color': '#f0f0f0',
+        'width': '270px',
+        'background-color': '#252B33E8',
         'position': 'fixed',
     }
 
-    link_style = {
-        'display': 'block',
-        'color': '#000',
-        'padding': '8px',
-        'text-decoration': 'none',
+    logo_style = {
+        'height': '50px',
+        'margin-bottom': '16px',
     }
 
-    hover_style = {
-        'background-color': '#ddd',
+    title_style = {
+        'color': '#000',  # Цвет текста названия приложения
+        'margin-bottom': '16px',  # Отступ снизу названия приложения
+        'font-size': '20px',  # Размер шрифта названия приложения
     }
+
+    # link_style = {
+    #     'display': 'block',
+    #     'color': '#000',
+    #     'padding': '16px',
+    #     'text-decoration': 'none',
+    #     'font-family': 'Inter',
+    #     'font-size': '26px',
+    #     # 'font-weight': '500',
+    #     # 'line-height': '31.47px',
+    #     'text-align': 'center',
+    # }
+
+    # hover_style = {
+    #     'background-color': '#F9F9FC',
+    #     'border-radius': '20px',
+    #     'margin': '16px 0',
+    #     'display': 'flex',
+    #     'align-items': 'center',
+    #     'justify-content': 'center',
+    #     'height': '40px',
+    #     'width': '100%',
+    #     'padding': '0 16px',
+    # }
 
     navbar = html.Div([
         html.Ul([
-            html.Li(html.A('О проекте', href='/', style=link_style), style=hover_style),
-            html.Li(html.A('Аналитика', href='/currency-analysis', style=link_style), style=hover_style),
-            html.Li(html.A('Контакты', href='/contact', style=link_style), style=hover_style),
+            # html.Img(src='/assets/logo_svg.svg', className='logo'),
+            html.Li(html.A('О проекте', href='/', className='nav-link nav-item')),
+            html.Li(html.A('Аналитика', href='/currency-analysis', className='nav-link nav-item')),
+            html.Li(html.A('Контакты', href='/contact', className='nav-link nav-item')),
         ], style=navbar_style)
     ], style={'flex': '0 0 200px'})
 
