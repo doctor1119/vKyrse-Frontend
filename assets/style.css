@@ -43,7 +43,7 @@
 
 }
 
-.block-text {
+.block-html {
     margin-bottom: 32px;
 }
 
@@ -56,5 +56,17 @@
     text-align: left;
 
 }
+
+.block-text {
+    border-radius: 20px 0px 0px 0px;
+    font-family: 'Inter', serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 24.2px;
+    text-align: center;
+}
+
+.
 
 
