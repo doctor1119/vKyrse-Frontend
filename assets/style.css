@@ -26,3 +26,35 @@
     margin-bottom: 10px;
 }
 
+.header-text {
+    font-family: 'Inter', serif;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 48px;
+    text-align: center;
+}
+
+.text {
+    font-family: 'Inter', serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24.2px;
+    text-align: center;
+
+}
+
+.block-text {
+    margin-bottom: 32px;
+}
+
+.gradient-bar {
+    background: linear-gradient(90deg, #FEFEFE 0%, #FE8888 100%);
+    font-family: 'Inter', serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 24.2px;
+    text-align: left;
+
+}
+
+

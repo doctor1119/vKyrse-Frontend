@@ -2,6 +2,7 @@ from dash import html, dcc
 import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
 
+
 def create_analytics_layout():
     layout = html.Div([
         html.H1("Аналитика", className="text-center mt-5"),
@@ -46,6 +47,3 @@ def create_analytics_layout():
     ], className="container-fluid")
 
     return layout
-
-
-
