@@ -1,5 +1,4 @@
 .nav-item {
-    border-radius: 20px;
     margin: 16px 0;
     display: flex;
     align-items: center;
@@ -9,16 +8,30 @@
     padding: 0 16px;
     transition: background-color 0.3s;
     text-decoration: none;
-    background: #F9FCFC;
-    color: #000;
+    background: #1E1E1E;
+    color: white;
     font-family: 'Inter', serif;
     font-size: 26px;
     font-weight: 500;
     line-height: 31.47px;
 }
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: color 0.3s;
+    font-size: 16px;
+    }
 
-.nav-item:hover {
-    background-color: #5FC0CE;
+.nav-link:hover {
+    color: #30D9CA;
+}
+
+.email-link {
+    font-size: 20px;
+    color: black;
+    background: white;
+    border-radius: 50%;
 }
 
 .logo {
