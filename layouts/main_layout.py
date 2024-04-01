@@ -5,10 +5,10 @@ import dash_bootstrap_components as dbc
 def create_main_layout():
     layout = html.Div([
         html.Div(children=[
-            html.H1("Кто мы?", className="header-text"),
+            #html.H1("Кто мы?", className="header-text"),
             html.P("Мы команда инициативных студентов, создавших для вас продукт, который позволит делать прогнозы  и "
                    "анализировать курса рубля", className="text")
-        ], className="block-html"),
+        ], className="block-html", style={'marginTop': '60px'}),  #, style={'marginTop': '60px'} добавляет отступ от навбара
         html.Div(children=[
             html.H1("О чем?", className="header-text"),
             html.P("Мы тщательно подобрали для вас самые разнообразные и последние новости, которые больше всего "
