@@ -12,8 +12,7 @@ def create_navbar():
         'position': 'fixed',
         'top': 0,  # Указываем, чтобы навбар был прижат к верху страницы
         'display': 'flex',  # Используем flexbox для центрирования элементов
-        #'align-items': 'center'
-
+        'z-index': '10',
     }
 
     navbar = html.Div([
