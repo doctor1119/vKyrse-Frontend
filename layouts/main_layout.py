@@ -14,11 +14,17 @@ def create_main_layout():
                     'text-align': 'center',
                     'color': 'white',
                 }),
-                html.P('место, где собраны все новости, изменившие курс рубля не только сегодня',
-                       className='main-layout-text'),
+                html.Div([
+                    html.P('место, где собраны все новости, изменившие курс рубля не только сегодня',
+                           className='main-layout-text'),
+                    html.A(html.Button([
+                        html.Span('Следить', className='follow-text'),
+                        html.Span(' за курсом', className='currency-text')
+                    ], id='follow-currency-button', className='follow-currency-button'), href='/currency-analysis'),
+                ]),
             ], style={
                 'position': 'absolute',
-                'top': '40%',
+                'top': '50%',
                 'left': '50%',
                 'transform': 'translate(-50%, -50%)',
                 'text-align': 'center',
@@ -26,11 +32,43 @@ def create_main_layout():
             }),
         ], style={
             'background-image': 'url(/assets/main_jpeg.jpg)',
-            'height': '87vh',
+            'height': '90vh',
             'background-size': 'cover',
             'background-position': 'center center',
-            'background-repeat': 'no-repeat',
             'position': 'relative',
         }),
-    ], style={'height': '100vh', 'overflow': 'hidden'})  # Общий стиль для контейнера
+        html.Div([ "Второй фон"
+        ], style={
+            'background-color': 'rgba(217, 217, 217, 0.26)',
+            'height': '90vh',
+            'background-size': 'cover',
+            'background-position': 'center center',
+            'position': 'relative',
+        } ),
+        html.Div(["Третий фон"
+                  ], style={
+            'background-image': 'url(assets/woman.jpg)',
+            'height': '90vh',
+            'background-size': 'cover',
+            'background-position': 'center center',
+            'position': 'relative',
+        }),
+        html.Div(["Четвертый фон"
+                  ], style={
+            'background-color': 'rgba(245, 245, 245, 1)',
+            'height': '90vh',
+            'background-size': 'cover',
+            'background-position': 'center center',
+            'position': 'relative',
+        }),
+        html.Div(["Пятый фон"
+                  ], style={
+            'background-image': 'url(assets/notebook.jpg)',
+            'height': '90vh',
+            'background-size': 'cover',
+            'background-position': 'center center',
+            'position': 'relative',
+        }),
+    ], style={'height': '100vh'})
+
     return layout

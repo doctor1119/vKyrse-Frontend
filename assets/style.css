@@ -41,7 +41,7 @@
 }
 
 .header-text {
-    font-family: 'Inter', serif;
+    font-family: 'Inter';
     font-size: 40px;
     font-weight: 800;
     line-height: 48px;
@@ -49,7 +49,7 @@
 }
 
 .text {
-    font-family: 'Inter', serif;
+    font-family: 'Inter';
     font-size: 20px;
     font-weight: 500;
     line-height: 24.2px;
@@ -63,7 +63,7 @@
 
 .gradient-bar {
     background: linear-gradient(90deg, #FEFEFE 0%, #FE8888 100%);
-    font-family: 'Inter', serif;
+    font-family: 'Inter';
     font-size: 20px;
     font-weight: 800;
     line-height: 24.2px;
@@ -73,7 +73,7 @@
 
 .block-text {
     border-radius: 20px 0px 0px 0px;
-    font-family: 'Inter', serif;
+    font-family: 'Inter';
     font-size: 20px;
     font-style: italic;
     font-weight: 400;
@@ -87,11 +87,8 @@
     font-weight: 700;
     line-height: 1;
     text-align: left;
-    /*top: 0%;*/
     white-space: nowrap;
     width: auto;
-    /*left: 0%;*/
-    /*position: absolute;*/
     color: #F9FCFC;
 
 }
@@ -104,4 +101,43 @@
     text-align: left;
 
 }
+
+.follow-currency-button {
+    margin-top: 40px;
+    width: auto; /* Ширина кнопки */
+    height: auto; /* Высота кнопки */
+    border-radius: 30px; /* Скругление углов */
+    background-color: rgba(48, 217, 202, 0.5); /* Полупрозрачный голубой фон */
+    font-family: 'Inter'; /* Шрифт */
+    font-weight: 500; /* Жирность шрифта */
+    line-height: 72px; /* Высота строки равна высоте кнопки для вертикального центрирования текста */
+    text-align: center; /* Выравнивание текста по центру */
+    border: none; /* Убрать границу */
+    cursor: pointer; /* Тип курсора, который будет отображаться при наведении */
+    transition: background-color 0.3s; /* Плавное изменение фона при наведении или активации */
+}
+
+.follow-currency-button:hover {
+    background-color: rgba(48, 217, 202, 0.7);
+}
+
+
+.follow-text {
+    font-family: Inter;
+    font-size: 1.5vw;
+    font-weight: 500;
+    line-height: 1;
+    text-align: left;
+    color: #F9FCFC;
+}
+
+.currency-text {
+    font-family: Inter;
+    font-size: 1.5vw;
+    font-weight: 500;
+    line-height: 1;
+    text-align: left;
+    color: #2B2929;
+}
+
 
