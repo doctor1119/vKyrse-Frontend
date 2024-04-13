@@ -11,9 +11,13 @@ from components.navbar import create_navbar
 def serve_layout():
     return html.Div(style={'display': 'flex', 'flexDirection': 'row'}, children=[
         create_navbar(),
-        html.Div(id='page-content', style={'margin-left': '100px', 'padding': '20px', 'flex': '1'}),
+        html.Div(id='page-content', style={
+            'flex': '1',
+            'padding-top': '120px',  # Отступ, чтобы содержимое начиналось ниже navbar
+        }),
         dcc.Location(id='url', refresh=False),
     ])
+
 
 
 @app.callback(Output('page-content', 'children'),

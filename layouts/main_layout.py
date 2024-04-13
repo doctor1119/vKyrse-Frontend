@@ -4,46 +4,71 @@ import dash_bootstrap_components as dbc
 
 def create_main_layout():
     layout = html.Div([
-        html.Div(children=[
-            #html.H1("Кто мы?", className="header-text"),
-            html.P("Мы команда инициативных студентов, создавших для вас продукт, который позволит делать прогнозы  и "
-                   "анализировать курса рубля", className="text")
-        ], className="block-html", style={'marginTop': '60px'}),  #, style={'marginTop': '60px'} добавляет отступ от навбара
-        html.Div(children=[
-            html.H1("О чем?", className="header-text"),
-            html.P("Мы тщательно подобрали для вас самые разнообразные и последние новости, которые больше всего "
-                   "могут влиять на курс рубля.", className="text")
-        ], className="block-html"),
-        html.Div(
-            children=[
-                html.Div("НА НАШЕЙ ПЛАТФОРМЕ ВЫ СМОЖЕТЕ", className='gradient-bar')
-            ], className="block-html"
-        ),
-        dbc.Row([
-            dbc.Col(dbc.Card([
-                dbc.CardBody([
-                    html.P("Быть в курсе всех актуальных событий и новостей", className="block-text"),
-                ])
-            ]),
-            ),
-            dbc.Col(dbc.Card([
-                dbc.CardBody([
-                    html.P("Прогнозировать изменения курса рубля", className="block-text"),
-                ])
-            ])),
-        ], className='mb-4'),
-        dbc.Row([
-            dbc.Col(dbc.Card([
-                dbc.CardBody([
-                    html.P("Анализировать текущую обстановку на рынке", className="block-text"),
-                ])
-            ]),
-            ),
-            dbc.Col(dbc.Card([
-                dbc.CardBody([
-                    html.P("Создавать свою стратегию инвестирования", className="block-text"),
-                ])
-            ])),
-        ], className='mb-4'),
-    ])
+        html.Div([
+            html.Div([
+                html.H1('Будь в Курсе', className='main-layout-header-text', style={
+                    'position': 'relative',
+                    'top': '0%',
+                    'left': '20%',
+                    'transform': 'translate(-50%, -50%)',
+                    'text-align': 'center',
+                    'color': 'white',
+                }),
+                html.Div([
+                    html.P('место, где собраны все новости, изменившие курс рубля не только сегодня',
+                           className='main-layout-text'),
+                    html.A(html.Button([
+                        html.Span('Следить', className='follow-text'),
+                        html.Span(' за курсом', className='currency-text')
+                    ], id='follow-currency-button', className='follow-currency-button'), href='/currency-analysis'),
+                ]),
+            ], style={
+                'position': 'absolute',
+                'top': '50%',
+                'left': '50%',
+                'transform': 'translate(-50%, -50%)',
+                'text-align': 'center',
+                'color': 'white',
+            }),
+        ], style={
+            'background-image': 'url(/assets/main_jpeg.jpg)',
+            'height': '90vh',
+            'background-size': 'cover',
+            'background-position': 'center center',
+            'position': 'relative',
+        }),
+        html.Div([ "Второй фон"
+        ], style={
+            'background-color': 'rgba(217, 217, 217, 0.26)',
+            'height': '90vh',
+            'background-size': 'cover',
+            'background-position': 'center center',
+            'position': 'relative',
+        } ),
+        html.Div(["Третий фон"
+                  ], style={
+            'background-image': 'url(assets/woman.jpg)',
+            'height': '90vh',
+            'background-size': 'cover',
+            'background-position': 'center center',
+            'position': 'relative',
+        }),
+        html.Div(["Четвертый фон"
+                  ], style={
+            'background-color': 'rgba(245, 245, 245, 1)',
+            'height': '90vh',
+            'background-size': 'cover',
+            'background-position': 'center center',
+            'position': 'relative',
+        }),
+        html.Div(["Пятый фон"
+                  ], style={
+            'background-image': 'url(assets/notebook.jpg)',
+            'height': '90vh',
+            'background-size': 'cover',
+            'background-position': 'center center',
+            'position': 'relative',
+        }),
+    ], style={'height': '100vh'})
+
     return layout
