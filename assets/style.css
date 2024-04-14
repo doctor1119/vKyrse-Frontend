@@ -21,28 +21,41 @@
     text-decoration: none;
     padding: 8px 16px;
     transition: color 0.3s;
-    font-size: 16px;
+    font-size: 1.5vw;
 }
 
 .nav-link:hover {
     color: #30D9CA;
 }
-
 .email-link {
     font-size: 20px;
+    font-weight: bold;
     color: black;
+
     background: white;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
 }
 
-.logo {
-    max-height: 60px;
-    margin-bottom: 10px;
+
+.tg-link {
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
 }
 
 .header-text {
-    font-family: 'Inter';
-    font-size: 40px;
+    font-family: 'Calibri';
+    cursor: pointer;
+    font-size: 3vw;
     font-weight: 800;
     line-height: 48px;
     text-align: center;
