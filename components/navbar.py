@@ -1,17 +1,17 @@
 from dash import html
-
+import dash_bootstrap_components as dbc
 
 def create_navbar():
     navbar_style = {
         'list-style-type': 'none',
         'margin': 0,
-        'padding': '40px 16px 0 16px',
-        #'height': '25%',
+        #'padding': '40px 16px 0 16px',
         'height': '120px',
         'width': '100%',
         'background-color': '#1E1E1E',
-        'position': 'fixed',
+        'position': 'fixed',  # Зафиксировать навбар
         'top': 0,
+        'z-index': 1000, # Устанавливаем z-index для того, чтобы навбар был поверх других элементов страницы
     }
 
     navbar = html.Div([
@@ -27,7 +27,7 @@ def create_navbar():
             'position': 'relative',
             'width': '7vw',
             'height': '4vw',
-            'top': '25%',
+            'top': '45%',
             'left': '15%',
             'transform': 'translate(-50%, -50%)',
             'text-align': 'center',
@@ -67,10 +67,10 @@ def create_navbar():
             'right': '7%',
             'transform': 'translate(-50 %, -50 %)',
         }),
-               href='CIFRA@gmail.com'),
+               href='mailto:ivan@sample.com'),
         html.A(
             html.Img(src='/assets/link-tg.png', className="tg-link"),
-            href='telegram-cifra',
+            href='https://t.me/parfenowakate',
             style={
                 'position': 'absolute',
                 'top': '52%',
