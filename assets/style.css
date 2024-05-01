@@ -96,7 +96,7 @@
 
 .main-layout-header-text {
     font-family: Calibri;
-    font-size: 6vw;
+    font-size: 5vw;
     font-weight: 700;
     line-height: 1;
     text-align: left;
@@ -109,19 +109,30 @@
 .main-layout-text {
     font-family: Calibri;
     font-size: 2vw;
-    font-weight: 300;
+    font-weight: 200;
     line-height: 1;
     text-align: left;
 
 }
 
+.main-layout-header-text-2 {
+    font-family: Calibri;
+    font-size: 1,5vw;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+    color: black;
+
+}
 .follow-currency-button {
     margin-top: 40px;
     width: auto; /* Ширина кнопки */
     height: auto; /* Высота кнопки */
     border-radius: 30px; /* Скругление углов */
     background-color: rgba(48, 217, 202, 0.5); /* Полупрозрачный голубой фон */
-    font-family: 'Inter'; /* Шрифт */
+    font-family: Calibr; /* Шрифт */
     font-weight: 500; /* Жирность шрифта */
     line-height: 72px; /* Высота строки равна высоте кнопки для вертикального центрирования текста */
     text-align: center; /* Выравнивание текста по центру */
@@ -136,12 +147,16 @@
 
 
 .follow-text {
-    font-family: Inter;
+    font-family: Calibri;
     font-size: 1.5vw;
     font-weight: 500;
     line-height: 1;
     text-align: left;
-    color: #F9FCFC;
+    color: #2B2929;
+}
+
+.follow-text:hover {
+    color: white;
 }
 
 .currency-text {
