@@ -8,6 +8,7 @@ from layouts.contacts_layout import create_contacts_layout
 from components.navbar import create_navbar
 
 
+
 def serve_layout():
     return html.Div(style={'display': 'flex', 'flexDirection': 'row'}, children=[
         create_navbar(),

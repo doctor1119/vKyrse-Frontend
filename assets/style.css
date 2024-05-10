@@ -52,6 +52,24 @@
     height: 30px;
 }
 
+.tg-link-big {
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5w;
+    height: 3.5vw;
+}
+
+.vk-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4vw;
+    height: 2.5vw;
+}
+
 .header-text {
     font-family: 'Calibri';
     cursor: pointer;
@@ -65,6 +83,15 @@
     font-family: 'Inter';
     font-size: 20px;
     font-weight: 500;
+    line-height: 24.2px;
+    text-align: center;
+
+}
+
+.text-bold {
+    font-family: 'Calibri';
+    font-size: 20px;
+    font-weight: 600;
     line-height: 24.2px;
     text-align: center;
 
@@ -117,15 +144,26 @@
 
 .main-layout-header-text-2 {
     font-family: Calibri;
-    font-size: 1,5vw;
+    font-size: 3vw;
     font-weight: 700;
     line-height: 1;
     text-align: left;
     white-space: nowrap;
     width: auto;
     color: black;
-
 }
+
+.main-layout-header-text-3 {
+    font-family: Calibri;
+    font-size: 2vw;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+    color: black;
+}
+
 .follow-currency-button {
     margin-top: 40px;
     width: auto; /* Ширина кнопки */
@@ -139,6 +177,20 @@
     border: none; /* Убрать границу */
     cursor: pointer; /* Тип курсора, который будет отображаться при наведении */
     transition: background-color 0.3s; /* Плавное изменение фона при наведении или активации */
+}
+
+.text-bubble {
+    font-size: 1.3vw;
+    margin-top: 0.8vw;
+    width: 80vw; /* Ширина кнопки */
+    height: auto; /* Высота кнопки */
+    padding: 0.8vw; /* Отступы внутри кнопки */
+    border-radius: 1.5vw; /* Скругление углов */
+    background-color: #30D9CA30; /* Полупрозрачный голубой фон */
+    font-family: Calibr; /* Шрифт */
+    font-weight: 500; /* Жирность шрифта */
+    text-align: left; /* Выравнивание текста по центру */
+    border: none; /* Убрать границу */
 }
 
 .follow-currency-button:hover {
