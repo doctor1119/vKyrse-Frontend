@@ -1,6 +1,7 @@
-from dash import html
+from dash import Dash, html, dcc, Input, Output
 import dash_bootstrap_components as dbc
-from components.navbar import create_navbar
+from app import app
+
 
 
 def create_main_layout():
@@ -75,16 +76,16 @@ def create_main_layout():
                     'padding-left': '20px',  # Добавляем отступ слева для декоративной полоски
                     'border-left': '4px solid #30D9CA',
                 }),
-            html.A(html.Button([
-                html.Span('Зачем смотреть курс рубля', className='follow-text'),
-            ], id='why-follow-currency-button', className='follow-currency-button',
-                style={'height': '3.3vw', 'width': '21vw', 'display': 'flex', 'align-items': 'center',
-                       'justify-content': 'center',
-                       'position': 'absolute',
-                       'top': '62%',
-                       'left': '13%'
-                       }),
-                href='/currency-analysis', style={'text-decoration': 'none'}),
+            # html.A(html.Button([
+            #     html.Span('Зачем смотреть курс рубля', className='follow-text'),
+            # ], id='why-follow-currency-button', className='follow-currency-button',
+            #     style={'height': '3.3vw', 'width': '21vw', 'display': 'flex', 'align-items': 'center',
+            #            'justify-content': 'center',
+            #            'position': 'absolute',
+            #            'top': '62%',
+            #            'left': '13%'
+            #            }),
+            #     href='/currency-analysis', style={'text-decoration': 'none'}),
     html.Div([
         html.Div([
             html.Img(src='/assets/image1.jpg', style={'width': '16vw', 'height': '16vw', 'margin-right': '20px'}),
@@ -194,14 +195,37 @@ def create_main_layout():
         }),
 
 #4 слайд
-        html.Div([html.H1('Заголовок слайда', style={}),
         html.Div([
-            html.P('Первая строка'),
-            html.P('Вторая строка'),
-            html.P('Третья строка'),
-        ], style={})
-                  ], style={
-            'background-color': 'rgba(245, 245, 245, 1)',
+            html.Div([
+                html.Img(src='/assets/vector-question-icon.png', style={'height': '3vw'}),
+                html.H1('Часто задаваемые вопросы', className='main-layout-header-text-2', style={'margin': '1vw'}),
+            ], style={'display': 'flex', 'align-items': 'center', 'margin-left': '5vw', 'padding-top': '2.5vw'},
+            ),
+            html.Div([
+                html.Img(src='/assets/arrow_right-icon.png', id='button1', style={'cursor': 'pointer', 'height': '1.5vw'}),
+                html.P(['Как вы анализируете изменения курса?'], className='main-layout-header-text-3',
+                       style={'margin': '1vw'})
+            ], style={'display': 'flex', 'align-items': 'center', 'margin-left': '10vw', 'padding-top': '1vw'}),
+            html.Div(id='output-container-button1',
+                     style={'margin-left': '15vw'}),
+            html.Div([
+                html.Img(src='/assets/arrow_right-icon.png', id='button2',
+                         style={'cursor': 'pointer', 'height': '1.5vw'}),
+                html.P(['Почему нам можно доверять?'], className='main-layout-header-text-3',
+                       style={'margin': '1vw'})
+            ], style={'display': 'flex', 'align-items': 'center', 'margin-left': '10vw', 'padding-top': '0vw'}),
+            html.Div(id='output-container-button2',
+                     style={'margin-left': '15vw'}),
+            html.Div([
+                html.Img(src='/assets/arrow_right-icon.png', id='button3',
+                         style={'cursor': 'pointer', 'height': '1.5vw'}),
+                html.P(['Для кого подойдет?'], className='main-layout-header-text-3',
+                       style={'margin': '1vw'})
+            ], style={'display': 'flex', 'align-items': 'center', 'margin-left': '10vw', 'padding-top': '0vw'}),
+            html.Div(id='output-container-button3',
+                     style={'margin-left': '15vw'})
+        ], style={
+            'background-color': 'rgba(217, 217, 217, 0.26)',
             'height': '90vh',
             'background-size': 'cover',
             'background-position': 'center center',
@@ -247,6 +271,148 @@ def create_main_layout():
             'background-position': 'center center',
             'position': 'relative',
         }),
-    ], style={'height': '100vh'})
+
+# 6 слайд
+        html.Div([
+            html.Div([
+                html.H1("НАШИ КОНТАКТЫ", className="text-bold", style={
+                    'position': 'absolute',
+                    'top': '22%',
+                    'left': '50%',
+                    'transform': 'translate(-50%, -50%)',
+                    'text-align': 'center',
+                    'color': 'black',
+                }),
+                html.H1(['+1 234 567 89 00',
+                         ],className="main-layout-header-text-2", style={
+                    'position': 'absolute',
+                    'top': '35%',
+                    'left': '50%',
+                    'transform': 'translate(-50%, -50%)',
+                    'text-align': 'center',
+                    'color': 'black',
+                }),
+                html.H1(['hello@company.com',
+                         ], className="main-layout-header-text-2", style={
+                    'position': 'absolute',
+                    'top': '47%',
+                    'left': '50%',
+                    'transform': 'translate(-50%, -50%)',
+                    'text-align': 'center',
+                    'color': 'black',
+                }),
+            ]),
+            html.Div([
+                html.H1("Мы в социальных сетях", className="text-bold", style={
+                    'position': 'absolute',
+                    'top': '67%',
+                    'left': '50%',
+                    'transform': 'translate(-50%, -50%)',
+                    'text-align': 'center',
+                    'color': 'black',
+                }),
+                html.A(
+                    html.Img(src='/assets/link-tg.png', className="tg-link-big"),
+                    href='https://t.me/parfenowakate',
+                    style={
+                        'position': 'absolute',
+                        'top': '80%',
+                        'left': '47%',
+                        'transform': 'translate(-50%, -50%)',
+
+                    }
+                ),
+                html.A(
+                    html.Img(src='/assets/vector-vk-icon.png', className="vk-link"),
+                    href='https://vk.com/maksim.kamenev',
+                    style={
+                        'position': 'absolute',
+                        'top': '80%',
+                        'left': '53%',
+                        'transform': 'translate(-50%, -50%)',
+
+                    }
+                )
+            ]),
+
+
+                ], style={
+                     'background-color': 'rgba(217, 217, 217, 0.26)',
+                     'height': '75vh',
+                     'background-size': 'cover',
+                     'background-position': 'center center',
+                     'position': 'relative',
+                 }),
+
+
+
+# 7 слайд
+        html.Div([
+            html.H1("вКурсе", className="header-text", style={
+            'position': 'absolute',
+            'top': '45%',
+            'left': '47%',
+            'transform': 'translate(-50%, -50%)',
+            'text-align': 'center',
+            'color': 'white',
+        }),
+        html.Img(src='/assets/ris1.png', style={
+            'position': 'relative',
+            'width': '7vw',
+            'height': '4vw',
+            'top': '45%',
+            'left': '55%',
+            'transform': 'translate(-50%, -50%)',
+            'text-align': 'center',
+        }),],
+                 style={
+                     'background-color': 'rgba(30, 30, 30, 1)',
+                     'height': '15vh',
+                     'background-size': 'cover',
+                     'background-position': 'center center',
+                     'position': 'relative',
+                 }),
+
+], style={'height': '100vh'}),
+
 
     return layout
+
+@app.callback(
+    Output('output-container-button1', 'children'),
+    [Input('button1', 'n_clicks')]
+)
+def update_output(n_clicks):
+    if n_clicks is None:
+        return ' '
+    else:
+        return html.Div([
+            'В разделе Аналитика на графиках и таблицах собраны последние события, изменившие курс рубля.',
+            html.Br(),
+            'На основании этих данных можно судить о динамике изменения национальной валюты.'
+        ], className='text-bubble')
+
+@app.callback(
+    Output('output-container-button2', 'children'),
+    [Input('button2', 'n_clicks')]
+)
+def update_output(n_clicks):
+    if n_clicks is None:
+        return ' '
+    else:
+        return html.Div([
+            'Мы используем различные источники информации и современные методы обработки данных, чтобы как можно реалистичнее взглянуть на экономическую обстановку и оценить новостной фон. '
+            'С нами вы можете быть уверены, что прогноз на курс рубля окажется реалистичным!',
+        ], className='text-bubble')
+
+@app.callback(
+    Output('output-container-button3', 'children'),
+    [Input('button3', 'n_clicks')]
+)
+def update_output(n_clicks):
+    if n_clicks is None:
+        return ' '
+    else:
+        return html.Div([
+            'Для всех, кто желает не терять время на самостоятельное изучение рынка, а сразу хочет посмотреть на экономическую обстановку, перспективы и прогнозы.',
+        ], className='text-bubble')
