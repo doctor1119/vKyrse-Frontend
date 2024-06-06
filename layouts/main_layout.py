@@ -37,6 +37,7 @@ def create_main_layout():
                 'transform': 'translate(-50%, -50%)',
                 'text-align': 'center',
                 'color': 'white',
+                'z-index': '-1',
             }),
         ], style={
             'background-image': 'url(/assets/main-dark.png)',
@@ -44,6 +45,7 @@ def create_main_layout():
             'background-size': 'cover',
             'background-position': 'center center',
             'position': 'relative',
+            'z-index': '-1',
             #'z-index': 900,
             #'margin-top': '120px',  # Учесть высоту навбара
         }),
@@ -104,7 +106,8 @@ def create_main_layout():
             'background-size': 'cover',
             'background-position': 'center center',
             'position': 'relative',
-        } ),
+            'z-index': '-1',
+        }),
 
 #3 слайд
         html.Div([ html.H1('Следить за курсом, чтобы', className='main-layout-header-text-2',
@@ -192,6 +195,7 @@ def create_main_layout():
             'background-size': 'cover',
             'background-position': 'center center',
             'position': 'relative',
+            'z-index': '-1',
         }),
 
 #4 слайд
@@ -230,6 +234,7 @@ def create_main_layout():
             'background-size': 'cover',
             'background-position': 'center center',
             'position': 'relative',
+            'z-index': '-1',
         }),
 
 
@@ -270,6 +275,7 @@ def create_main_layout():
             'background-size': 'cover',
             'background-position': 'center center',
             'position': 'relative',
+            'z-index': '-1',
         }),
 
 # 6 слайд
@@ -342,6 +348,7 @@ def create_main_layout():
                      'background-size': 'cover',
                      'background-position': 'center center',
                      'position': 'relative',
+                     'z-index': '-1',
                  }),
 
 
@@ -371,9 +378,10 @@ def create_main_layout():
                      'background-size': 'cover',
                      'background-position': 'center center',
                      'position': 'relative',
+                     'z-index': '-1',
                  }),
 
-], style={'height': '100vh'}),
+], style={'height': '100vh', 'z-index': '-1'}),
 
 
     return layout

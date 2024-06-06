@@ -56,6 +56,7 @@ def create_contacts_layout():
             'background-size': 'cover',
             'background-position': 'center center',
             'position': 'relative',
+            'z-index': '-1',
         }),
-    ])
+    ], style={'position': 'relative', 'z-index': -1})
     return layout
