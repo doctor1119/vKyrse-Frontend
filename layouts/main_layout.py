@@ -265,7 +265,7 @@ def create_main_layout():
             }),
 
                   ], style={
-            'background-image': 'url(assets/notebook.jpg)',
+            'background-image': 'url(assets/notebook.png)',
             'height': '90vh',
             'background-size': 'cover',
             'background-position': 'center center',
