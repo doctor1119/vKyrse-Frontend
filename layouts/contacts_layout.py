@@ -58,5 +58,39 @@ def create_contacts_layout():
             'position': 'relative',
             'z-index': '-1',
         }),
-    ], style={'position': 'relative', 'z-index': -1})
+
+        # 2 слайд
+        html.Div([
+            html.Div([
+                html.H1('Второй слайд', className='main-layout-header-text-2', style={
+                    'text-align': 'left',
+                    'color': 'black',
+                    'margin-top': '0vh',  # отступ сверху
+                }),
+                html.Div([
+                    html.Img(src='/assets/icon1.png', style={'height': '5vw', 'margin-top': '2vh', 'margin-left': '2vw'}),
+                    html.Img(src='/assets/icon2.png', style={'height': '5vw', 'margin-top': '2vh', 'margin-left': '2vw'}),
+                ], style={'display': 'flex'}),
+                html.Img(src='/assets/hand-holding-megaphone-for-protest.png', style={'height': '40vh', 'margin-top': '5vh', 'margin-right': '5vw', 'float': 'right'}),
+            ], style={
+                'background-color': 'rgba(89, 95, 95, 1)',
+                'height': '90vh',
+                'position': 'relative',
+            })
+        ], style={'position': 'relative', 'z-index': -1}),
+
+        # 3 слайд
+        html.Div([
+            html.H1('Третий слайд', className='main-layout-header-text-2', style={
+                'text-align': 'left',
+                'color': 'black',
+                'margin-top': '0vh',  # отступ сверху
+            }),
+        ], style={
+            'background-color': 'rgba(245, 245, 245, 1)',
+            'height': '55vh',
+            'position': 'relative',
+            'z-index': '-1',
+        })
+    ])
     return layout
