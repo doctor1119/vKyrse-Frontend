@@ -37,7 +37,6 @@ def create_main_layout():
                 'transform': 'translate(-50%, -50%)',
                 'text-align': 'center',
                 'color': 'white',
-                'z-index': '-1',
             }),
         ], style={
             'background-image': 'url(/assets/main-dark.png)',
@@ -78,16 +77,16 @@ def create_main_layout():
                     'padding-left': '20px',  # Добавляем отступ слева для декоративной полоски
                     'border-left': '4px solid #30D9CA',
                 }),
-            # html.A(html.Button([
-            #     html.Span('Зачем смотреть курс рубля', className='follow-text'),
-            # ], id='why-follow-currency-button', className='follow-currency-button',
-            #     style={'height': '3.3vw', 'width': '21vw', 'display': 'flex', 'align-items': 'center',
-            #            'justify-content': 'center',
-            #            'position': 'absolute',
-            #            'top': '62%',
-            #            'left': '13%'
-            #            }),
-            #     href='/currency-analysis', style={'text-decoration': 'none'}),
+             html.A(html.Button([
+                 html.Span('Зачем смотреть курс рубля', className='follow-text'),
+                 ], id='why-follow-currency-button', className='follow-currency-button',
+                 style={'height': '3.3vw', 'width': '21vw', 'display': 'flex', 'align-items': 'center',
+                        'justify-content': 'center',
+                        'position': 'absolute',
+                        'top': '62%',
+                        'left': '13%'
+                        }),
+                 href='/currency-analysis', style={'text-decoration': 'none'}),
     html.Div([
         html.Div([
             html.Img(src='/assets/image1.jpg', style={'width': '16vw', 'height': '16vw', 'margin-right': '20px'}),
