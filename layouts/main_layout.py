@@ -6,47 +6,48 @@ from app import app
 
 def create_main_layout():
     layout = html.Div([
-       # create_navbar(),
+        # 1 слайд
         html.Div([
+            # Фоновый слой
+            html.Div(style={
+                'background-image': 'url(/assets/main-dark.png)',
+                'height': '90vh',
+                'background-size': 'cover',
+                'background-position': 'center center',
+                'position': 'absolute',
+                'width': '100%',
+                'z-index': '-1',
+            }),
+            # Контентный слой
             html.Div([
                 html.H1('Будь в Курсе', className='main-layout-header-text', style={
-                    'position': 'relative',
-                    'top': '0%',
-                    'left': '20%',
-                    'transform': 'translate(-50%, -50%)',
-                    'text-align': 'center',
                     'color': 'white',
+                    'margin-bottom': '1vw',
                 }),
-                html.Div([
-                    html.P(['место, где собраны все новости,',
-                                    html.Br(),  # Перенос строки
-                                    'изменившие курс рубля не только сегодня'],
-                           className='main-layout-text', style={'font-size': '2vw'}),
-                    html.A(html.Button([
-                        html.Span('Следить за курсом', className='follow-text'),
-                    ], id='follow-currency-button', className='follow-currency-button',
-                        style={'height': '3vw', 'width': '15vw', 'display': 'flex', 'align-items': 'center',
-                               'justify-content': 'center',
-                               'margin-left': 'auto', 'margin-right': 'auto'}),
-                        href='/currency-analysis', style={'text-decoration': 'none'}),
-                ]),
+                html.P([
+                    'место, где собраны все новости,',
+                    html.Br(),  # Перенос строки
+                    'изменившие курс рубля не только сегодня'
+                ], className='main-layout-text', style={'font-size': '2vw', 'color': 'white', 'margin-bottom': '2vw'}),
+                html.A(html.Button([
+                    html.Span('Следить за курсом', className='follow-text'),
+                ], id='follow-currency-button', className='follow-currency-button',
+                    style={'height': '3vw', 'width': '15vw', 'display': 'flex', 'align-items': 'center',
+                           'justify-content': 'center', 'z-index': '1'}),
+                    href='/currency-analysis', style={'text-decoration': 'none'}),
             ], style={
-                'position': 'absolute',
-                'top': '50%',
-                'left': '50%',
-                'transform': 'translate(-50%, -50%)',
+                'display': 'flex',
+                'flex-direction': 'column',
+                'align-items': 'center',
+                'justify-content': 'center',
+                'height': '100%',
                 'text-align': 'center',
-                'color': 'white',
+                'position': 'relative',
+                'z-index': '1',
             }),
         ], style={
-            'background-image': 'url(/assets/main-dark.png)',
             'height': '90vh',
-            'background-size': 'cover',
-            'background-position': 'center center',
             'position': 'relative',
-            'z-index': '-1',
-            #'z-index': 900,
-            #'margin-top': '120px',  # Учесть высоту навбара
         }),
 #2 слайд
         html.Div([

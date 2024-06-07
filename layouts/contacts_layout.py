@@ -4,6 +4,17 @@ def create_contacts_layout():
     layout = html.Div([
         # 1 слайд
         html.Div([
+            # Фоновый слой
+            html.Div(style={
+                'background-color': 'rgba(245, 245, 245, 1)',
+                'height': '90vh',
+                'background-size': 'cover',
+                'background-position': 'center center',
+                'position': 'absolute',
+                'width': '100%',
+                'z-index': '-1',
+            }),
+            # Контентный слой
             html.Div([
                 html.Div([
                     html.H1([
@@ -49,16 +60,13 @@ def create_contacts_layout():
                 'margin-left': '5vw',  # отступ слева от внешнего блока
                 'margin-top': '0vw',  # отступ сверху от внешнего блока
                 'color': 'black',
+                'position': 'relative',
+                'z-index': '1',
             }),
         ], style={
-            'background-color': 'rgba(245, 245, 245, 1)',
             'height': '90vh',
-            'background-size': 'cover',
-            'background-position': 'center center',
             'position': 'relative',
-            'z-index': '-1',
         }),
-
         # 2 слайд
         html.Div([
             html.Div([
@@ -76,6 +84,7 @@ def create_contacts_layout():
                 'background-color': 'rgba(89, 95, 95, 1)',
                 'height': '90vh',
                 'position': 'relative',
+                'z-index': '-1',
             })
         ], style={'position': 'relative', 'z-index': -1}),
 
@@ -84,7 +93,8 @@ def create_contacts_layout():
             html.H1('Третий слайд', className='main-layout-header-text-2', style={
                 'text-align': 'left',
                 'color': 'black',
-                'margin-top': '0vh',  # отступ сверху
+                'margin-top': '0vh',
+                'z-index': '-1',
             }),
         ], style={
             'background-color': 'rgba(245, 245, 245, 1)',
