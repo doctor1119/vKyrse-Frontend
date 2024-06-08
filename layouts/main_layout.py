@@ -29,7 +29,8 @@ def create_main_layout():
                     'место, где собраны все новости,',
                     html.Br(),  # Перенос строки
                     'изменившие курс рубля не только сегодня'
-                ], className='main-layout-text', style={'font-size': '2vw', 'color': 'white', 'margin-bottom': '2vw', 'z-index': '-1'}),
+                ], className='main-layout-text',
+                    style={'font-size': '2vw', 'color': 'white', 'margin-bottom': '2vw', 'z-index': '-1'}),
                 html.A(html.Button([
                     html.Span('Следить за курсом', className='follow-text'),
                 ], id='follow-currency-button', className='follow-currency-button',
@@ -44,12 +45,10 @@ def create_main_layout():
                 'height': '100%',
                 'text-align': 'center',
                 'position': 'relative',
-                'z-index': '1',
             }),
         ], style={
             'height': '90vh',
             'position': 'relative',
-            'z-index': '-1',
         }),
 #2 слайд
         html.Div([

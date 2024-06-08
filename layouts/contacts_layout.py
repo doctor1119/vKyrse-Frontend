@@ -12,6 +12,7 @@ def create_contacts_layout():
                 'background-position': 'center center',
                 'position': 'absolute',
                 'width': '100%',
+                'z-index': '-1',
             }),
             # Контентный слой
             html.Div([
@@ -25,6 +26,7 @@ def create_contacts_layout():
                         'color': 'black',
                         'margin-top': '7%',
                         'margin-left': '7%',
+                        'z-index': '-1',
                     }),
                     html.P('Будем рады услышать ваши честные отзывы!',
                            className='main-layout-text', style={
@@ -33,6 +35,7 @@ def create_contacts_layout():
                                 'color': 'black',
                                 'margin-top': '2vw',
                                 'margin-left': '7%',
+                            'z-index': '-1',
                            }),
                     html.A(html.Button([
                         html.Span('Оставить отзыв', className='follow-text'),
@@ -45,6 +48,7 @@ def create_contacts_layout():
                             'justify-content': 'center',
                             'margin-left': '45%',
                             'margin-top': '2vw',  # отступ сверху от текста
+                            'z-index': '-1',
                         }),
                         href='https://forms.gle/46Y8vvtya9eCse6F6', style={'text-decoration': 'none'}),
                 ], style={
@@ -57,6 +61,7 @@ def create_contacts_layout():
                     'margin-top': '10%',
                     'margin-left': '60%',
                     'position': 'absolute',
+                    'z-index': '-1',
                 }),
             ], style={
                 'display': 'flex',
@@ -68,7 +73,6 @@ def create_contacts_layout():
         ], style={
             'height': '90vh',
             'position': 'relative',
-            'z-index': '-1',
         }),
 
         # 2 слайд
