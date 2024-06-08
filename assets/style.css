@@ -164,6 +164,28 @@
     color: black;
 }
 
+.big-header {
+    font-family: Calibri;
+    font-size: 7vw;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+    color: #30D9CA;
+}
+
+.big-header-black {
+    font-family: Calibri;
+    font-size: 7vw;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+    color: black;
+}
+
 .follow-currency-button {
     margin-top: 40px;
     width: auto; /* Ширина кнопки */

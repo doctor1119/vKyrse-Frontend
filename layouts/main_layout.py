@@ -23,12 +23,13 @@ def create_main_layout():
                 html.H1('Будь в Курсе', className='main-layout-header-text', style={
                     'color': 'white',
                     'margin-bottom': '1vw',
+                    'z-index': '-1',
                 }),
                 html.P([
                     'место, где собраны все новости,',
                     html.Br(),  # Перенос строки
                     'изменившие курс рубля не только сегодня'
-                ], className='main-layout-text', style={'font-size': '2vw', 'color': 'white', 'margin-bottom': '2vw'}),
+                ], className='main-layout-text', style={'font-size': '2vw', 'color': 'white', 'margin-bottom': '2vw', 'z-index': '-1'}),
                 html.A(html.Button([
                     html.Span('Следить за курсом', className='follow-text'),
                 ], id='follow-currency-button', className='follow-currency-button',
@@ -48,6 +49,7 @@ def create_main_layout():
         ], style={
             'height': '90vh',
             'position': 'relative',
+            'z-index': '-1',
         }),
 #2 слайд
         html.Div([
