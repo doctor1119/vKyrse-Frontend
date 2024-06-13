@@ -25,7 +25,6 @@ def create_analytics_layout():
                     'display': 'flex',
                     'align-items': 'center',
                     'justify-content': 'center',
-                    'z-index': '-1',
                     'text-decoration': 'none',
                     'position': 'absolute',
                     'top': '15%',
@@ -43,9 +42,10 @@ def create_analytics_layout():
         ], style={
             'height': '90vh',
             'position': 'relative',
+            'z-index': '-1',
         }),
 
-        # 2 и 3 слайд (объединены)
+        # Отдельный маленький слайд для выбора даты
         html.Div([
             html.Div([
                 html.Img(src='/assets/calendar_month.png', style={'height': '2vw', 'margin-right': '1vw'}),
@@ -63,35 +63,40 @@ def create_analytics_layout():
             ], style={
                 'display': 'flex',
                 'align-items': 'center',
-                'z-index': '-1',
                 'margin-left': '10%',
-                'margin-top': '5vh',  # Отступ сверху
-            }),  # Делаем строку из элементов и выравниваем по центру
+                'margin-top': '5vh',
+            }),
+        ], style={'height': 'auto', 'z-index': '-1'}),
 
+        # 2 и 3 слайд (объединены)
+        html.Div([
             dbc.Row([
                 dbc.Col(dbc.Card([
                     dbc.CardBody([
                         html.H4("График 1", className="card-title"),
                         dcc.Graph(id='graph-1', figure=go.Figure()),
                     ])
-                ]), width=6, style={'z-index': '-1', 'margin-left': '5%'}),  # Установка ширины графика 45% и задний план
+                ]), width=6, style={'margin-left': '5%'}),
                 dbc.Col(
                     html.Div([
-                        html.A('На этом графике можно посмотреть, как меняется курс рубля по отношению к доллару за конкретный промежуток времени', className='text-bubble-2', style={
-                            'height': 'auto',
-                            'width': 'auto',
-                            'padding': '2vw',
-                            'display': 'flex',
-                            'align-items': 'center',
-                            'justify-content': 'center',
-                            'z-index': '-1',
-                            'text-decoration': 'none',
-                            'margin-left': '2vw',
-                            'margin-top': '2vw',
-                        }),
+                        html.A(
+                            'На этом графике можно посмотреть, как меняется курс рубля по отношению к доллару за конкретный промежуток времени',
+                            className='text-bubble-2', style={
+                                'height': 'auto',
+                                'width': 'auto',
+                                'padding': '2vw',
+                                'display': 'flex',
+                                'align-items': 'center',
+                                'justify-content': 'center',
+                                'z-index': '-1',
+                                'text-decoration': 'none',
+                                'margin-left': '2vw',
+                                'margin-top': '2vw',
+                            }),
                     ]),
                     width=4,
-                    style={'z-index': '-1', 'margin-left': '2vw', 'margin-top': '2vw'}  # Добавляем отступы для выравнивания текста
+                    style={'z-index': '-1', 'margin-left': '2vw', 'margin-top': '2vw'}
+                    # Добавляем отступы для выравнивания текста
                 ),  # Текст справа от графика 1
             ], className='mb-4', style={'z-index': '-1', 'margin-top': '5vh'}),  # Перемещаем ниже
 
@@ -101,9 +106,9 @@ def create_analytics_layout():
                         html.H4("График 2", className="card-title"),
                         dcc.Graph(id='graph-2', figure=go.Figure()),
                     ])
-                ]), width=6, style={'z-index': '-1', 'margin-left': '5%'}),  # Установка ширины графика 45% и задний план
-            ], className='mb-4', style={'z-index': '-1', 'margin-top': '5vh'}),  # Перемещаем ниже
-        ], style={'height': '180vh', 'position': 'relative'}),  # Установка высоты второго слайда
+                ]), width=6, style={'margin-left': '5%'}),
+            ], className='mb-4', style={'margin-top': '5vh'}),
+        ], style={'height': '180vh', 'position': 'relative', 'z-index': '-1',}),
 
         # Подвал
         html.Div([
@@ -116,7 +121,7 @@ def create_analytics_layout():
                 'color': 'white',
             }),
             html.Img(src='/assets/ris1.png', style={
-                'position': 'relative',
+                'position': 'absolute',
                 'width': '7vw',
                 'height': '4vw',
                 'top': '45%',
@@ -132,6 +137,6 @@ def create_analytics_layout():
             'position': 'relative',
             'z-index': '-1',
         }),
-    ], style={'height': 'auto'})
+    ])
 
     return layout
