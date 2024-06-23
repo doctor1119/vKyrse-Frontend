@@ -3,11 +3,10 @@ import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
 from datetime import datetime
 from services.send_requests import send_requests
+from app import app
 
 # Sample topics - you can fetch these from your backend
 TOPICS = ["Economy", "Politics", "Technology", "Health", "Entertainment"]
-
-app = Dash(__name__)
 
 
 def create_analytics_layout():
@@ -197,33 +196,48 @@ app.layout = create_analytics_layout()
     [Output('graph-1', 'figure'),
      Output('graph-2', 'figure'),
      Output('bar-chart', 'figure')],
-    Input('load-data-button', 'n_clicks'),
-    State('date-picker-range', 'start_date'),
-    State('date-picker-range', 'end_date'),
-    State('topic-dropdown', 'value'),
-    State('topic-dropdown-3', 'value')
+    [Input('load-data-button', 'n_clicks')],
+    [State('date-picker-range', 'start_date'),
+     State('date-picker-range', 'end_date'),
+     State('topic-dropdown', 'value'),
+     State('topic-dropdown-3', 'value')]
 )
 def update_graphs(n_clicks, start_date, end_date, topic1, topic2):
     if n_clicks == 0 or start_date is None or end_date is None:
-        return go.Figure(), go.Figure(), go.Figure(
-            go.Bar(x=['Category A', 'Category B', 'Category C'], y=[10, 20, 30]))
+        return go.Figure(), go.Figure(), go.Figure(go.Bar(x=['Category A', 'Category B', 'Category C'], y=[10, 20, 30]))
 
     # Convert start_date and end_date to datetime objects for easier manipulation
-    start_date = datetime.strptime(start_date, "%Y-%m-%d")
-    end_date = datetime.strptime(end_date, "%Y-%m-%d")
+    start_date_str = datetime.strptime(start_date, '%Y-%m-%d').strftime('%Y-%m-%d')
+    end_date_str = datetime.strptime(end_date, '%Y-%m-%d').strftime('%Y-%m-%d')
 
-    # Call the send_requests function
-    send_requests(start_date, end_date)
+    # Call the send_requests function and parse the response
+    response = send_requests(start_date_str, end_date_str)
+    print(response)
+    data = response.get('data', [])
 
-    # Placeholder: Replace with actual logic to fetch and display data for graph 1
+    # Extract dates and currency values for graph-1
+    dates = [entry['published_dt'] for entry in data]
+    currency_values = [entry['currency_curs'] for entry in data]
+
+    # Create the figure for graph-1
     fig1 = go.Figure()
-    fig1.add_trace(go.Scatter(x=[1, 2, 3], y=[2, 1, 3], mode='lines', name='Sample Data'))
+    fig1.add_trace(go.Scatter(x=dates, y=currency_values, mode='lines', name='Currency Rate'))
 
-    # Placeholder: Replace with actual logic to fetch and display data for graph 2
+    # Placeholder for graph-2 (You can replace this with your actual logic)
     fig2 = go.Figure()
-    fig2.add_trace(go.Scatter(x=[1, 2, 3], y=[3, 2, 1], mode='lines', name='Sample Data'))
+    if topic1:
+        filtered_data = [entry for entry in data if entry['topic'] == topic1]
+        dates2 = [entry['published_dt'] for entry in filtered_data]
+        currency_values2 = [entry['currency_curs'] for entry in filtered_data]
+        fig2.add_trace(go.Scatter(x=dates2, y=currency_values2, mode='lines', name='Filtered Currency Rate'))
 
-    # Placeholder: Replace with actual logic to fetch and display data for bar chart
-    bar_chart = go.Figure(go.Bar(x=['Category A', 'Category B', 'Category C'], y=[10, 20, 30]))
+    # Placeholder for bar-chart (You can replace this with your actual logic)
+    bar_chart = go.Figure()
+    if topic2:
+        topic_counts = {entry['topic']: 0 for entry in data}
+        for entry in data:
+            if entry['topic'] == topic2:
+                topic_counts[entry['topic']] += 1
+        bar_chart.add_trace(go.Bar(x=list(topic_counts.keys()), y=list(topic_counts.values()), name='Topic Count'))
 
     return fig1, fig2, bar_chart
