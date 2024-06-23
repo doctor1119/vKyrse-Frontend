@@ -58,7 +58,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3.5w;
+    width: 3.5vw;
     height: 3.5vw;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .text {
-    font-family: 'Inter';
+    font-family: 'Calibri';
     font-size: 20px;
     font-weight: 500;
     line-height: 24.2px;
@@ -207,6 +207,7 @@
 }
 
 .text-bubble {
+    font-family: Calibri;
     font-size: 1.3vw;
     margin-top: 0.8vw;
     width: 80vw; /* Ширина кнопки */
@@ -214,7 +215,21 @@
     padding: 0.8vw; /* Отступы внутри кнопки */
     border-radius: 1.5vw; /* Скругление углов */
     background-color: #30D9CA30; /* Полупрозрачный голубой фон */
-    font-family: Calibr; /* Шрифт */
+    font-family: Calibri; /* Шрифт */
+    font-weight: 500; /* Жирность шрифта */
+    text-align: left; /* Выравнивание текста по центру */
+    border: none; /* Убрать границу */
+}
+
+.text-bubble-2 {
+    font-family: Calibri;
+    color: black;
+    font-size: 1.3vw;
+    width: 40vw; /* Ширина кнопки */
+    height: auto; /* Высота кнопки */
+    padding: 0.8vw; /* Отступы внутри кнопки */
+    border-radius: 1.5vw; /* Скругление углов */
+    background-color: #30D9CA50; /* Полупрозрачный голубой фон */
     font-weight: 500; /* Жирность шрифта */
     text-align: left; /* Выравнивание текста по центру */
     border: none; /* Убрать границу */
