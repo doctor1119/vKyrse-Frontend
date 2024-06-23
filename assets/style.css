@@ -1,0 +1,265 @@
+.nav-item {
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
+    padding: 0 16px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    background: #1E1E1E;
+    color: white;
+    font-family: 'Inter', serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 31.47px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: color 0.3s;
+    font-size: 1.5vw;
+}
+
+.nav-link:hover {
+    color: #30D9CA;
+}
+.email-link {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+
+.tg-link {
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.tg-link-big {
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5vw;
+    height: 3.5vw;
+}
+
+.vk-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4vw;
+    height: 2.5vw;
+}
+
+.header-text {
+    font-family: 'Calibri';
+    cursor: pointer;
+    font-size: 3vw;
+    font-weight: 800;
+    line-height: 48px;
+    text-align: center;
+}
+
+.text {
+    font-family: 'Calibri';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24.2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.text-bold {
+    font-family: 'Calibri';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+    text-align: center;
+
+}
+
+.block-html {
+    margin-bottom: 32px;
+}
+
+.gradient-bar {
+    background: linear-gradient(90deg, #FEFEFE 0%, #FE8888 100%);
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 24.2px;
+    text-align: left;
+    height: 75px;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative
+}
+
+.block-text {
+    border-radius: 20px 0px 0px 0px;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 24.2px;
+    text-align: center;
+}
+
+.main-layout-header-text {
+    font-family: Calibri;
+    font-size: 5vw;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+    color: #F9FCFC;
+
+}
+
+.main-layout-text {
+    font-family: Calibri;
+    font-size: 2vw;
+    font-weight: 200;
+    line-height: 1;
+    text-align: left;
+
+}
+
+.main-layout-header-text-2 {
+    font-family: Calibri;
+    font-size: 3vw;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+    color: black;
+}
+
+.main-layout-header-text-3 {
+    font-family: Calibri;
+    font-size: 2vw;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+    color: black;
+}
+
+.big-header {
+    font-family: Calibri;
+    font-size: 7vw;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+    color: #30D9CA;
+}
+
+.big-header-black {
+    font-family: Calibri;
+    font-size: 7vw;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+    color: black;
+}
+
+.follow-currency-button {
+    margin-top: 40px;
+    width: auto; /* Ширина кнопки */
+    height: auto; /* Высота кнопки */
+    border-radius: 30px; /* Скругление углов */
+    background-color: rgba(48, 217, 202, 0.5); /* Полупрозрачный голубой фон */
+    font-family: Calibr; /* Шрифт */
+    font-weight: 500; /* Жирность шрифта */
+    line-height: 72px; /* Высота строки равна высоте кнопки для вертикального центрирования текста */
+    text-align: center; /* Выравнивание текста по центру */
+    border: none; /* Убрать границу */
+    cursor: pointer; /* Тип курсора, который будет отображаться при наведении */
+    transition: background-color 0.3s; /* Плавное изменение фона при наведении или активации */
+}
+
+.text-bubble {
+    font-family: Calibri;
+    font-size: 1.3vw;
+    margin-top: 0.8vw;
+    width: 80vw; /* Ширина кнопки */
+    height: auto; /* Высота кнопки */
+    padding: 0.8vw; /* Отступы внутри кнопки */
+    border-radius: 1.5vw; /* Скругление углов */
+    background-color: #30D9CA30; /* Полупрозрачный голубой фон */
+    font-family: Calibri; /* Шрифт */
+    font-weight: 500; /* Жирность шрифта */
+    text-align: left; /* Выравнивание текста по центру */
+    border: none; /* Убрать границу */
+}
+
+.text-bubble-2 {
+    font-family: Calibri;
+    color: black;
+    font-size: 1.3vw;
+    width: 40vw; /* Ширина кнопки */
+    height: auto; /* Высота кнопки */
+    padding: 0.8vw; /* Отступы внутри кнопки */
+    border-radius: 1.5vw; /* Скругление углов */
+    background-color: #30D9CA50; /* Полупрозрачный голубой фон */
+    font-weight: 500; /* Жирность шрифта */
+    text-align: left; /* Выравнивание текста по центру */
+    border: none; /* Убрать границу */
+}
+
+.follow-currency-button:hover {
+    background-color: rgba(48, 217, 202, 0.7);
+}
+
+
+.follow-text {
+    font-family: Calibri;
+    font-size: 1.5vw;
+    font-weight: 500;
+    line-height: 1;
+    text-align: left;
+    color: #2B2929;
+}
+
+.follow-text:hover {
+    color: white;
+}
+
+.currency-text {
+    font-family: Inter;
+    font-size: 1.5vw;
+    font-weight: 500;
+    line-height: 1;
+    text-align: left;
+    color: #2B2929;
+}
+
+

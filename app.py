@@ -5,4 +5,4 @@ app = dash.Dash(__name__, suppress_callback_exceptions=True, external_stylesheet
 
 server = app.server
 
-app.title = 'ЦИФРА'
+app.title = 'вКурсе'
